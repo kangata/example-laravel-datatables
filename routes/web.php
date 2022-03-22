@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\PayrollController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/payrolls', function () {
+    return view('payroll');
+});
+
+Route::get('/json/payrolls', [PayrollController::class, 'index']);
